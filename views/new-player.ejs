@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <div>Enter your name</div>
+    <input id="name">
+    <button id="submit">submit</button>
+  </body>
+  <script>
+    const nameInput = document.getElementById('name');
+    document.getElementById('submit').addEventListener('click', () => {
+      const name = nameInput.value;
+      document.cookie = `name=${name}`;
+      window.location.reload();
+    });
+  </script>
+</html>

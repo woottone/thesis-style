@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      socket.on('test', data => {
+        console.log('socket test', data);
+      });
+
+      socket.on('reload', () => {
+        window.location.reload();
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      look at screen
+    </div>
+    <button id="next">Next</button>
+
+    <script>
+      const button = document.getElementById('next');
+      button.addEventListener('click', () => {
+        socket.emit('next');
+      });
+    </script>
+  </body>
+</html>

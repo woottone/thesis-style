@@ -20,7 +20,7 @@ let isStarted = false;
 app.set('view engine', 'ejs');
 
 app.get('/present', (req, res) => {
-  const currentData = data[currentPath][currentStep];
+  const currentData = data[currentPath].steps[currentStep];
   if (!results[currentPath]) {
     results[currentPath] = {};
   }
@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
     res.render('mobile-wait-for-players');
     return;
   }
-  const currentData = data[currentPath][currentStep];
+  const currentData = data[currentPath].steps[currentStep];
   res.render(currentData.mobileTemplate, currentData);
 });
 
@@ -75,7 +75,7 @@ io.on('connection', socket => {
     const randomIndex = Math.floor(Math.random() * allChoices.length);
     const randomChoice = allChoices[randomIndex];
 
-    currentPath = data[currentPath][currentStep].destinations[randomChoice];
+    currentPath = data[currentPath].destinations[randomChoice];
     currentStep = 0;
     io.emit('reload');
   });
@@ -95,7 +95,7 @@ io.on('connection', socket => {
         }
       }
 
-      currentPath = data[currentPath][currentStep].destinations[firstChoice];
+      currentPath = data[currentPath].destinations[firstChoice];
       currentStep = 0;
       io.emit('reload');
     }

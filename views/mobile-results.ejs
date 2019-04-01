@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      socket.on('reload', () => {
+        window.location.reload();
+      });
+    </script>
+  </head>
+  <body>
+    be more unanimous
+    <button id="back">Back</button>
+    <button id="adjudicate">Adjudicate</button>
+  </body>
+  <script>
+    const button = document.getElementById('back');
+    button.addEventListener('click', () => {
+      socket.emit('back');
+    });
+
+    const adjudicate = document.getElementById('adjudicate');
+    adjudicate.addEventListener('click', () => {
+      socket.emit('adjudicate');
+    });
+  </script>
+</html>

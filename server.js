@@ -1,25 +1,36 @@
 const data = require('./data');
 const express = require('express');
 const app = express();
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+const cookie = require('cookie');
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 app.use(cookieParser())
+app.use('/static', express.static('static'))
 
 let currentPath = 'harris';
 let currentStep = 0;
-let currentResults = [0, 0, 0];
+
+const results = {};
+
+const allPlayers = new Set();
+let isStarted = false;
 
 app.set('view engine', 'ejs');
 
 app.get('/present', (req, res) => {
   const currentData = data[currentPath][currentStep];
-  if (currentData.resetResults) {
-    currentResults = [0, 0, 0];
+  if (!results[currentPath]) {
+    results[currentPath] = {};
   }
 
-  res.render(currentData.presentTemplate, { ...currentData, results: currentResults });
+  if (!isStarted) {
+    res.render('wait-for-players', { allPlayers });
+    return;
+  }
+
+  res.render(currentData.presentTemplate, { ...currentData, results: results[currentPath] });
 });
 
 app.get('/', (req, res) => {
@@ -27,23 +38,72 @@ app.get('/', (req, res) => {
     res.render('new-player');
     return;
   }
+
+  if (!isStarted) {
+    res.render('mobile-wait-for-players');
+    return;
+  }
   const currentData = data[currentPath][currentStep];
   res.render(currentData.mobileTemplate, currentData);
 });
 
 io.on('connection', socket => {
-  let i = 0;
-  setInterval(() => socket.emit('test', i++), 1000);
+  const cookies = cookie.parse(socket.handshake.headers.cookie);
+  if (!isStarted && !allPlayers.has(cookies.name)) {
+    allPlayers.add(cookies.name);
+    io.emit('reload');
+  }
+
+  socket.on('start', () => {
+    isStarted = true;
+    io.emit('reload');
+  });
 
   socket.on('next', () => {
     currentStep++;
     io.emit('reload');
   });
 
+  socket.on('back', () => {
+    currentStep--;
+    results[currentPath] = {};
+    io.emit('reload');
+  });
+
+  socket.on('adjudicate', () => {
+    const allChoices = unique(Object.values(results[currentPath]));
+    const randomIndex = Math.floor(Math.random() * allChoices.length);
+    const randomChoice = allChoices[randomIndex];
+
+    currentPath = data[currentPath][currentStep].destinations[randomChoice];
+    currentStep = 0;
+    io.emit('reload');
+  });
+
   socket.on('choice', i => {
-    currentResults[i]++;
-    console.log(currentResults);
+    const currentResults = results[currentPath]
+    currentResults[cookies.name] = i;
+
+    const players = Object.keys(currentResults);
+    if (players.length === allPlayers.size) {
+      const firstChoice = currentResults[players[0]];
+      for (let i = 1; i < players.length; i++) {
+        if (currentResults[players[i]] !== firstChoice) {
+          currentStep++;
+          io.emit('reload');
+          return;
+        }
+      }
+
+      currentPath = data[currentPath][currentStep].destinations[firstChoice];
+      currentStep = 0;
+      io.emit('reload');
+    }
   })
 });
 
 server.listen(8080);
+
+function unique(array) {
+  return [...new Set(array)];
+}

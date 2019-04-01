@@ -17,12 +17,15 @@
     <div>
       look at screen
     </div>
-    <button id="next">Next</button>
+    <button data-event="back">Back</button>
+    <button data-event="next">Next</button>
 
     <script>
-      const button = document.getElementById('next');
-      button.addEventListener('click', () => {
-        socket.emit('next');
+      document.querySelectorAll('button').forEach(button => {
+        const eventName = button.dataset.event;
+        button.addEventListener('click', () => {
+          socket.emit(eventName);
+        });
       });
     </script>
   </body>

@@ -10,8 +10,12 @@
     </script>
   </head>
   <body>
-    <div style="background-image: url(static/<%= image %>)">
-      <%- text %>
+    <div>
+      <% Object.keys(results).forEach(player => { %>
+        <div>
+          <%= player %>:<%= results[player] %>
+        </div>
+      <% }); %>
     </div>
   </body>
 </html>

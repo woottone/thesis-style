@@ -10,8 +10,14 @@
     </script>
   </head>
   <body>
-    <div style="background-image: url(static/<%= image %>)">
-      <%- text %>
+    <div>
+      <button id="start">Start</button>
     </div>
+    <script>
+      const button = document.getElementById('start');
+      button.addEventListener('click', () => {
+        socket.emit('start');
+      });
+    </script>
   </body>
 </html>

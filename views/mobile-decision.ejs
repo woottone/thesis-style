@@ -12,26 +12,40 @@
         window.location.reload();
       });
     </script>
+    <style>
+      #waiting {
+        height: 100%;
+        width: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
+      }
+      #waiting.visible {
+        display: block;
+      }
+    </style>
   </head>
   <body>
+    <div id="waiting">Wait up</div>
     <div>
       What should we do
     </div>
-    <input type="radio" id="radio-1" name="radio">
-    <label for="radio-1">Choice 1</label>
-    <input type="radio" id="radio-2" name="radio">
-    <label for="radio-2">Choice 2</label>
-    <input type="radio" id="radio-3" name="radio">
-    <label for="radio-3">Choice 3</label>
+    <% for (let i = 0; i < choices.length; i++) { %>
+      <input class="radio" type="radio" id="radio-<%= i %>" name="radio">
+      <label for="radio-<%= i %>"><%= choices[i] %></label>
+    <% } %>
     <button id="submit">submit</button>
 
     <script>
       const button = document.getElementById('submit');
+      const radios = Array.from(document.querySelectorAll('.radio'));
 
-      const radios = [1, 2, 3].map(i => document.getElementById(`radio-${i}`));
       button.addEventListener('click', () => {
         const value = radios.findIndex(el => el.checked);
         socket.emit('choice', value);
+        document.getElementById('waiting').classList.add('visible');
       });
     </script>
   </body>

@@ -117,7 +117,7 @@ module.exports = {
       'maria',
       'bob',
       'joe',
-    ]
+    ],
     steps: [
       {
         presentTemplate: 'info',

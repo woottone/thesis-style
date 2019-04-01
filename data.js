@@ -75,7 +75,7 @@ module.exports = {
         text: 'whatever2',
         image: 'image2.png',
       },
-    }
+    ]
   },
   bob: {
     destinations: [

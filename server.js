@@ -102,7 +102,7 @@ io.on('connection', socket => {
   })
 });
 
-server.listen(8080);
+server.listen(80);
 
 function unique(array) {
   return [...new Set(array)];

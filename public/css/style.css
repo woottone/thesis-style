@@ -4,7 +4,6 @@
   }
 
 .body{
-    margin: 0px !important;
     overflow: none;
 }
 .container{
@@ -12,16 +11,16 @@
     height: 100%;
     grid-template-columns: 10% 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 50% 50%;
-    border-color: black;
+    border-color: 1px solid black;
 }
 
-.background-img{
+/* .background-img{
     grid-column-start: 1 ;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 3;
     z-index: 0;
-}
+} */
 
 .story{
     z-index: 1;

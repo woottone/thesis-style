@@ -14,13 +14,11 @@
       });
     </script>
   </head>
-  <body>
-    <div class="body-text">
-      look at screen
+  <body style="background-image: url(static/see-screen-background.jpg); background-position: left top; background-size: cover;">
+    <div class="mobile-container">
+      <button data-event="back" class="back-button button">Back</button>
+      <button data-event="next" class="next-button button">Next</button>
     </div>
-    <button data-event="back">Back</button>
-    <button data-event="next">Next</button>
-
     <script>
       document.querySelectorAll('button').forEach(button => {
         const eventName = button.dataset.event;

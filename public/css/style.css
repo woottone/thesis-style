@@ -38,7 +38,7 @@
 
 /* desktop */
 /* story screen */
-.container{
+.desktop-container{
     display: grid;
     height: 100%;
     grid-template-columns: 20% 2fr 58%;
@@ -66,9 +66,35 @@
 
 /* mobile */
 
+.mobile-container{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 90% 1fr;
+}
+
+.button{
+    background-color: transparent;
+    border: none;
+    font-family: 'Karla';
+    font-size: 21px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
 /* look-at-screen */
 .body-text{
     font-family: 'Karla';
+}
+
+.back-button{
+    background-image: url(static/back-button.png);
+    background-position: left top; 
+    background-size: cover;
+}
+
+.next-button{
+    background-image: url(static/next-button.png);
 }
 
 /* decision screen */

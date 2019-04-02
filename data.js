@@ -9,14 +9,20 @@ module.exports = {
         {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'This is maria',
+        text: 'This is Maria.',
         image: 'maria-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'whatever2<br>asdf',
-        image: 'image2.png',
+        text: 'She and her husband, Harris, have been married for over 60 years, and happily retired for 20.<br><br>They currently live in a single-dwelling household in a seniors community.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Maria was a stay-at-home mom when she and her husband were raising their five children.<br><br>Her husband has always worked, and she has always maintained the household.',
+        image: 'maria-background.jpg',
       },
       {
         presentTemplate: 'present-decision',

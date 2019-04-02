@@ -10,14 +10,14 @@
 .container{
     display: grid;
     height: 100%;
-    grid-template-columns: 10% 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 50% 50%;
+    grid-template-columns: 20% 2fr 58%;
+    grid-template-rows: repeat(4, 25%);
     border-color: black;
 }
 
 .background-img{
     grid-column-start: 1 ;
-    grid-column-end: 4;
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
     z-index: 0;
@@ -27,4 +27,8 @@
     z-index: 1;
     font-family: 'Noteworthy';
     font-size: 21px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
 }

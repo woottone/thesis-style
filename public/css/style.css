@@ -1,12 +1,43 @@
 @font-face {
     font-family: 'Noteworthy';
-    src: url('static/Noteworthy-Bold.ttf'); /* IE9 Compat Modes */
+    src: url('static/Noteworthy-Bold.ttf');
   }
+
+@font-face {
+    font-family: 'Karla';
+    src: url('static/Karla/Karla-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('static/Karla/Karla-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('static/Karla/Karla-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('static/Karla/Karla-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
 
 .body{
     margin: 0px !important;
     overflow: none;
 }
+
+/* desktop */
+/* story screen */
 .container{
     display: grid;
     height: 100%;
@@ -14,14 +45,14 @@
     grid-template-rows: repeat(4, 25%);
     border-color: black;
 }
-
+/* 
 .background-img{
     grid-column-start: 1 ;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
     z-index: 0;
-}
+} */
 
 .story{
     z-index: 1;
@@ -32,3 +63,18 @@
     grid-row-start: 2;
     grid-row-end: 4;
 }
+
+/* mobile */
+
+/* look-at-screen */
+.body-text{
+    font-family: 'Karla';
+}
+
+/* decision screen */
+
+.radio-label{
+    font-family: 'Karla';
+    font-size: 21px;
+}
+

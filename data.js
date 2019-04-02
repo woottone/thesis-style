@@ -1,5 +1,5 @@
 module.exports = {
-  harris: {
+  intro: {
     destinations: [
       'maria',
       'bob',
@@ -104,7 +104,7 @@ module.exports = {
         choices: [
           'Move in with family',
           'Move to a retirement residence that provides meals, cleaning and social activities',
-          'Stay where they are with increased formal caregiving support ',
+          'Stay where they are with increased formal caregiving support',
         ],
       },
       {
@@ -118,15 +118,15 @@ module.exports = {
   },
   maria: {
     destinations: [
-      'maria',
-      'bob',
-      'joe',
+      'path1',
+      'path2',
+      'path3',
     ],
     steps: [
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'whatever',
+        text: 'maria step 1',
         image: 'image.png',
       },
       {
@@ -142,7 +142,7 @@ module.exports = {
         text: 'whatever2',
         image: 'image2.png',
         choices: [
-          'make him stay',
+          'path 1',
           'do something else',
         ],
       },
@@ -165,7 +165,7 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'whatever',
+        text: 'bob step 1',
         image: 'image.png',
       },
       {
@@ -200,7 +200,7 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'whatever',
+        text: 'joe step 1',
         image: 'image.png',
       },
       {
@@ -229,5 +229,44 @@ module.exports = {
         image: 'image2.png',
       },
     ],
+  },
+  path1: {
+    destinations: [
+      'path1',
+      'path2',
+      'path3',
+    ],
+    steps: [
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'path 1',
+        image: 'image.png',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'whatever2',
+        image: 'image2.png',
+      },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision',
+        resetResults: true,
+        text: 'whatever2',
+        image: 'image2.png',
+        choices: [
+          'make him stay',
+          'do something else',
+        ],
+      },
+      {
+        presentTemplate: 'present-results',
+        mobileTemplate: 'mobile-results',
+        resetResults: true,
+        text: 'whatever2',
+        image: 'image2.png',
+      },
+    ]
   },
 }

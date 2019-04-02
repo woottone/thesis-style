@@ -10,7 +10,7 @@ app.use(cookieParser())
 app.use('/static', express.static('static'))
 app.use('/public', express.static('public'))
 
-let currentPath = 'harris';
+let currentPath = 'intro';
 let currentStep = 0;
 
 const results = {};

@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 
 io.on('connection', socket => {
   const cookies = cookie.parse(socket.handshake.headers.cookie);
-  if (!isStarted && !allPlayers.has(cookies.name)) {
+  if (cookies.name && !isStarted && !allPlayers.has(cookies.name)) {
     allPlayers.add(cookies.name);
     io.emit('reload');
   }
@@ -85,6 +85,10 @@ io.on('connection', socket => {
     currentResults[cookies.name] = i;
 
     const players = Object.keys(currentResults);
+
+    console.log(currentResults);
+    console.log(players);
+    console.log(allPlayers);
     if (players.length === allPlayers.size) {
       const firstChoice = currentResults[players[0]];
       for (let i = 1; i < players.length; i++) {

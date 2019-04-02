@@ -8,6 +8,7 @@ const io = require('socket.io')(server);
 
 app.use(cookieParser())
 app.use('/static', express.static('static'))
+app.use('/public', express.static('public'))
 
 let currentPath = 'harris';
 let currentStep = 0;

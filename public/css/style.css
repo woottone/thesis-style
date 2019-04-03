@@ -32,9 +32,10 @@
 }
 
 /* global styling */
-.body{
+body{
     margin: 0px !important;
     overflow: none;
+    background-color: #e9f6ff;
 }
 
 .body-text{
@@ -45,6 +46,9 @@
     border: none;
 }
 
+h1{
+    color: #334259;
+}
 /* desktop */
 /* story screen */
 .desktop-container{
@@ -120,16 +124,65 @@
     grid-row-end: 3;
 }
 
+/* new-player screen */
+
+.name-input{
+    border: 2px solid #334259;
+}
+
+.new-player-container{
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(5, 20%);
+    grid-template-columns: 10% auto 10%;
+}
+
+.name-header{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
+.name-input{
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    height: 30%;
+}
+
+.name-submit{
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+}
+
+/* waiting for players to join screen */
+
+.mobile-waiting-container{
+    display: grid;
+    height: 100%;
+    grid-template-rows: 20% 20% 20% 20%;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.mobile-waiting{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
+.mobile-waiting-button{
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    height: 90px;
+    width: 250px;
+    font-size: 21px;
+    color: #334259;
+    font-weight: bold;
+}
+
 /* look-at-screen */
 
 .back-button{
-    background-image: url(static/back-button.png);
-    background-position: left top; 
-    background-size: cover;
 }
 
 .next-button{
-    background-image: url(static/next-button.png);
 }
 
 /* decision screen */
@@ -138,4 +191,6 @@
     font-family: 'Karla';
     font-size: 21px;
 }
+
+
 

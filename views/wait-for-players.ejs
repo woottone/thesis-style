@@ -13,9 +13,11 @@
   <body style="background-image: url(static/join-background.jpg); background-position: left top; background-size: cover;">
     <div class="join-container">
       <h1 class="players-joined body-text">Players joined</h1>
-      <% allPlayers.forEach(player => { %>
-        <div class="players body-text"><%= player %></div>
-      <% }) %>
+      <div class="players">
+        <% allPlayers.forEach(player => { %>
+          <div class="body-text"><%= player %></div>
+        <% }) %>
+    </div>
       <!-- <p class="body-text join-text">Join on your phone at agd.emmawootton.com</p>  -->
       <h2 class="instructions body-text">Instructions</h2>
       <p class="body-text start-text">Join on your phone at agd.emmawootton.com<br><br>Once everyone has joined hit <em>"Start"</em></p>

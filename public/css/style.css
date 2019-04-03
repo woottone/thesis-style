@@ -31,9 +31,14 @@
     font-style: italic;
 }
 
+/* global styling */
 .body{
     margin: 0px !important;
     overflow: none;
+}
+
+.body-text{
+    font-family: 'Karla';
 }
 
 /* desktop */
@@ -64,6 +69,41 @@
     grid-row-end: 4;
 }
 
+/* landing screen */
+
+.join-container{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 6% auto 45%;
+    grid-template-rows: 1fr 1fr 2fr 10% 20%;
+}
+
+.players-joined{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.players{
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.instructions{
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+
+.join-text{
+    grid-column: 2 / 4;
+    grid-row: 5 / 6;
+}
+
+.start-text{
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+
+}
+
 /* mobile */
 
 .mobile-container{
@@ -83,9 +123,6 @@
 }
 
 /* look-at-screen */
-.body-text{
-    font-family: 'Karla';
-}
 
 .back-button{
     background-image: url(static/back-button.png);

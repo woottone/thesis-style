@@ -1,9 +1,15 @@
 module.exports = {
   intro: {
+    //currentPath
     destinations: [
       'maria',
       'bob',
       'joe',
+    ],
+    choices: [
+      'Move in with family',
+      'Move to a retirement residence that provides meals, cleaning and social activities',
+      'Stay where they are with increased formal caregiving support',
     ],
     steps : [
         {
@@ -101,11 +107,6 @@ module.exports = {
         mobileTemplate: 'mobile-decision',
         resetResults: true,
         image: 'decision-background.jpg',
-        choices: [
-          'Move in with family',
-          'Move to a retirement residence that provides meals, cleaning and social activities',
-          'Stay where they are with increased formal caregiving support',
-        ],
       },
       {
         presentTemplate: 'present-results',

@@ -31,7 +31,7 @@ app.get('/present', (req, res) => {
     return;
   }
 
-  res.render(currentData.presentTemplate, { ...currentData, results: results[currentPath] });
+  res.render(currentData.presentTemplate, { ...currentData, results: results[currentPath], choices: data[currentPath].choices});
 });
 
 app.get('/', (req, res) => {
@@ -45,7 +45,8 @@ app.get('/', (req, res) => {
     return;
   }
   const currentData = data[currentPath].steps[currentStep];
-  res.render(currentData.mobileTemplate, currentData);
+  res.render(currentData.mobileTemplate, {...currentData, choices: data[currentPath].choices});
+  // ... means take everything in current data object and stick in new object, and also put in more stuff 
 });
 
 io.on('connection', socket => {

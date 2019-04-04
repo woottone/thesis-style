@@ -12,11 +12,26 @@
   </head>
   <body>
     <div>
-      <% Object.keys(results).forEach(player => { %>
+
+        <% const resultsByChoice = choices.map(() => []);%>
+        <% Object.keys(results).forEach(player => resultsByChoice[results[player]].push(player)); %>
+
+        <%resultsByChoice.forEach((players, choiceNumber) => { %>
+          <!-- going to do each once per result -->
+          <!-- choiceNumber is index, choices is array of names -->
+          <h2><%=choices[choiceNumber]%></h2>
+          <%players.forEach(player => {%>
+            <div><%= player %></div>
+            <!-- = prints it out -->
+            <!-- put out one div for each player that voted for this choice -->
+            <%});%>
+        <%});%>
+
+      <!-- <% Object.keys(results).forEach(player => { %>
         <div>
           <%= player %>:<%= results[player] %>
         </div>
-      <% }); %>
+      <% }); %> -->
     </div>
   </body>
 </html>

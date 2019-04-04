@@ -113,8 +113,6 @@ h1{
 .mobile-container{
     display: grid;
     height: 100%;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 90% 1fr;
 }
 
 .mobile-nav-button{
@@ -131,8 +129,6 @@ h1{
 }
 
 .new-player-container{
-    display: grid;
-    height: 100%;
     grid-template-rows: repeat(5, 20%);
     grid-template-columns: 10% auto 10%;
 }
@@ -156,8 +152,6 @@ h1{
 /* waiting for players to join screen */
 
 .mobile-waiting-container{
-    display: grid;
-    height: 100%;
     grid-template-rows: 20% 20% 20% 20%;
     grid-template-columns: 20% 60% 20%;
 }
@@ -179,6 +173,11 @@ h1{
 
 /* look-at-screen */
 
+.mobile-look-container{
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 90% 1fr;
+}
+
 .back-button{
 }
 
@@ -192,5 +191,19 @@ h1{
     font-size: 21px;
 }
 
+/* results screen */
 
+.mobile-results-container{
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 90% 10%;
+}
 
+.mobile-results-back{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.adjudicate-button{
+    grid-column: 2;
+    grid-row: 2;
+}

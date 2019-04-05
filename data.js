@@ -18,12 +18,12 @@ module.exports = {
         text: 'This is Maria.',
         image: 'maria-background.jpg',
       },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'She and her husband, Harris, have been married for over 60 years, and happily retired for 20.<br><br>They currently live in a single-dwelling household in a seniors community.',
-      //   image: 'harris-background.jpg',
-      // },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'She and her husband, Harris, have been married for over 60 years, and happily retired for 20.<br><br>They currently live in a single-dwelling household in a seniors community.',
+        image: 'harris-background.jpg',
+      },
       // {
       //   presentTemplate: 'info',
       //   mobileTemplate: 'look-at-screen',

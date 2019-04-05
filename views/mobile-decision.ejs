@@ -34,11 +34,19 @@
       <input class="radio" type="radio" id="radio-<%= i %>" name="radio">
       <label for="radio-<%= i %>" class="radio-label"><%= choices[i] %></label>
     <% } %>
-    <button id="submit">submit</button>
+    <button disabled id="submit">submit</button>
+    <!-- disabled means clicking on the button won't do anything, but can add css to it (button:disabled{background image}) -->
 
     <script>
       const button = document.getElementById('submit');
       const radios = Array.from(document.querySelectorAll('.radio'));
+
+      radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+          button.removeAttribute('disabled');
+        });
+        // for every radio add event listener for change event not click
+      });
 
       button.addEventListener('click', () => {
         const value = radios.findIndex(el => el.checked);

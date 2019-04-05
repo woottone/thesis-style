@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
     return;
   }
   const currentData = data[currentPath].steps[currentStep];
-  res.render(currentData.mobileTemplate, {...currentData, choices: data[currentPath].choices});
+  res.render(currentData.mobileTemplate, {...currentData, choices: data[currentPath].choices, currentStep});
   // ... means take everything in current data object and stick in new object, and also put in more stuff 
 });
 

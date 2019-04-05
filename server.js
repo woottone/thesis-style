@@ -13,9 +13,9 @@ app.use('/public', express.static('public'))
 let currentPath = 'intro';
 let currentStep = 0;
 
-const results = {};
+let results = {};
 
-const allPlayers = new Set();
+let allPlayers = new Set();
 let isStarted = false;
 
 app.set('view engine', 'ejs');
@@ -35,7 +35,10 @@ app.get('/present', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  if (!req.cookies.name) {
+  if (!allPlayers.has(req.cookies.name)) {
+    // have a list of all the players actually connected, check if the person connecting now has already sent an emit
+    // if they haven't, send them to the new player page, even if they already have a cookie 
+    // only get in the list by clicking the submit button 
     res.render('new-player');
     return;
   }
@@ -51,10 +54,12 @@ app.get('/', (req, res) => {
 
 io.on('connection', socket => {
   const cookies = cookie.parse(socket.handshake.headers.cookie);
-  if (cookies.name && !isStarted && !allPlayers.has(cookies.name)) {
-    allPlayers.add(cookies.name);
-    io.emit('reload');
-  }
+  socket.on('new-player', name => {
+    if (name && !isStarted && !allPlayers.has(name)) {
+      allPlayers.add(name);
+      io.emit('reload');
+    }
+  });
 
   socket.on('start', () => {
     isStarted = true;
@@ -69,6 +74,15 @@ io.on('connection', socket => {
   socket.on('back', () => {
     currentStep--;
     results[currentPath] = {};
+    io.emit('reload');
+  });
+
+  socket.on('exit', () => {
+    currentStep = 0;
+    currentPath = 'intro'; 
+    results = {};
+    allPlayers = new Set();
+    isStarted = false;
     io.emit('reload');
   });
 

@@ -1,6 +1,18 @@
 <html>
   <head>
       <link rel="stylesheet" type="text/css" href="public/css/style.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+      <script>
+        const socket = io();
+
+        socket.on('test', data => {
+          console.log('socket test', data);
+        });
+
+        socket.on('reload', () => {
+          window.location.reload();
+        });
+      </script>
   </head>
   <body>
   <div class="new-player-container mobile-container">
@@ -14,7 +26,8 @@
     document.getElementById('submit').addEventListener('click', () => {
       const name = nameInput.value;
       document.cookie = `name=${name}`;
-      window.location.reload();
+      socket.emit('new-player', name);
+      // emitting this event (new-player) and the data being sent is the name from the cookie
     });
   </script>
 </html>

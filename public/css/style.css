@@ -179,9 +179,12 @@ h1{
 }
 
 .back-button{
+    background-image: url(/static/back-button.png);
 }
 
 .next-button{
+    background-image: url(/static/next-button.png);
+    /* needs a slash for absolute path, relative if not, CSS can't access it because it's inside a folder */
 }
 
 /* decision screen */

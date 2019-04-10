@@ -11,8 +11,8 @@
     </script>
   </head>
   <body>
-    <div>
-
+    <div style="background-image: url(static/results-background.png); background-position: left top; background-size: cover;">
+      <div class="results-container">
         <% const resultsByChoice = choices.map(() => []);%>
         <% Object.keys(results).forEach(player => resultsByChoice[results[player]].push(player)); %>
 
@@ -32,6 +32,7 @@
           <%= player %>:<%= results[player] %>
         </div>
       <% }); %> -->
+    </div>
     </div>
   </body>
 </html>

@@ -13,6 +13,7 @@
   <body style="background-image: url(static/join-background.jpg); background-position: left top; background-size: cover;">
     <div class="join-container">
       <h1 class="players-joined body-text">Players joined</h1>
+      <button id="exit" data-event="exit" class="exit-button button">Reset</button>
       <div class="players">
         <% allPlayers.forEach(player => { %>
           <div class="body-text"><%= player %></div>
@@ -22,5 +23,10 @@
       <h2 class="instructions body-text">Instructions</h2>
       <p class="body-text start-text">Join on your phone at agd.emmawootton.com<br><br>Once everyone has joined hit <em>"Start"</em></p>
     </div>
+    <script>
+      const button = document.getElementById('exit').addEventListener('click', () => {
+        socket.emit('exit');
+      });
+    </script>
   </body>
 </html>

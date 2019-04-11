@@ -37,8 +37,8 @@ app.get('/present', (req, res) => {
 app.get('/', (req, res) => {
   if (!allPlayers.has(req.cookies.name)) {
     // have a list of all the players actually connected, check if the person connecting now has already sent an emit
-    // if they haven't, send them to the new player page, even if they already have a cookie 
-    // only get in the list by clicking the submit button 
+    // if they haven't, send them to the new player page, even if they already have a cookie
+    // only get in the list by clicking the submit button
     res.render('new-player');
     return;
   }
@@ -49,11 +49,11 @@ app.get('/', (req, res) => {
   }
   const currentData = data[currentPath].steps[currentStep];
   res.render(currentData.mobileTemplate, {...currentData, choices: data[currentPath].choices, currentStep});
-  // ... means take everything in current data object and stick in new object, and also put in more stuff 
+  // ... means take everything in current data object and stick in new object, and also put in more stuff
 });
 
 io.on('connection', socket => {
-  const cookies = cookie.parse(socket.handshake.headers.cookie);
+  const cookies = socket.handshake.headers.cookie && cookie.parse(socket.handshake.headers.cookie);
   socket.on('new-player', name => {
     if (name && !isStarted && !allPlayers.has(name)) {
       allPlayers.add(name);
@@ -79,7 +79,7 @@ io.on('connection', socket => {
 
   socket.on('exit', () => {
     currentStep = 0;
-    currentPath = 'intro'; 
+    currentPath = 'intro';
     results = {};
     allPlayers = new Set();
     isStarted = false;

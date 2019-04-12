@@ -44,6 +44,7 @@ body{
 .button{
     background-color: transparent;
     border: none;
+    margin: 0;
 }
 
 h1{
@@ -129,31 +130,56 @@ h1{
 }
 
 .new-player-container{
-    grid-template-rows: 10% 15% 15% 10% 5% 20% 20%;
-    grid-template-columns: 10% 1fr 1fr 1fr 10%;
+    grid-template-rows: 10% 15% 15% 10% 5% 5% 5% 14% 5%;
+    grid-template-columns: 10% 15% 1fr 1fr 15% 10%;
 }
 
 .mobile-header-bubble{
-    grid-column: 2 / 5;
+    grid-column: 2 / 6;
     grid-row: 2 / 4;
     width: 100%;
     height: 100%;
 }
 
+.logo-background{
+    background-image: url(/static/logo-bubble.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    grid-column: 2 / 6;
+    grid-row: 2 / 4;
+
+}
+
 .name-header{
     grid-row: 5 / 6;
-    grid-column: 2 / 3;
+    grid-column: 2 / 5;
+    font-size: 55px;
 }
+
+/* input[type="text"]:focus{
+    font-size: 16px;
+} */
 
 .name-input{
     grid-row: 6 / 7;
-    grid-column: 2 / 5;
-    height: 33%;
+    grid-column: 2 / 6;
+    /* height: 50%; */
+    font-size: 34px;
 }
 
 .name-submit{
-    grid-row: 7 / 8;
+    grid-row: 8 / 9;
     grid-column: 3 / 5;
+    background-image: url(/static/submit-button.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 55px;
+    margin-top: 10%;
+}
+
+.submit-button-image{
+    width: 100%;
+    height: 100%;
 }
 
 /* waiting for players to join screen */
@@ -181,16 +207,27 @@ h1{
 /* look-at-screen */
 
 .mobile-look-container{
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 90% 1fr;
+    grid-template-columns: 5% 45% 45% 5%;
+    grid-template-rows: 85% 1fr 5%;
 }
 
 .back-button{
+    grid-column-start: 2;
     background-image: url(/static/back-button.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 55px;
+    text-align: center;
+
 }
 
 .next-button{
+    grid-column-start: 3;
     background-image: url(/static/next-button.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 55px;
+    text-align: center;
     /* needs a slash for absolute path, relative if not, CSS can't access it because it's inside a folder */
 }
 
@@ -198,7 +235,7 @@ h1{
 
 .radio-label{
     font-family: 'Karla';
-    font-size: 21px;
+    font-size: 55px;
     display: block;
     margin-left: 10px;
     margin-bottom: 20px;
@@ -208,23 +245,22 @@ h1{
 }
 
 .mobile-decision-container{
-    grid-template-rows: 40% 40% 20%;
+    grid-template-rows: 40% 40% 5% 9% 5%;
     grid-template-columns: 10% 20% 20% 20% 20% 10%;
 }
 
 .decision-submit{
     background-image: url(/static/next-button.png);
-    background-position: left top; 
-    background-size: contain;
-    /* height: 90px;
-    width: 250px; */
-    /* width: 30px; */
-    grid-row: 3 / 4;
+    grid-row: 4 / 5;
     grid-column: 4 / 6;
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 55px;
+    text-align: center;
 }
 
 button:disabled{
-    background-image: url(/static/disabled-button.png);
+    background-image: url(/static/disabled-button.png); 
 }
 
 .radio-div{

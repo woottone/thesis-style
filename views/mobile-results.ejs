@@ -13,6 +13,7 @@
   <body style="background-image: url(static/mobile-results-background.jpg); background-position: left top; background-size: cover;">
       <div class="mobile-results-container mobile-container">
         <div id="modal" class="modal">
+          <button class="exit-modal button" id="exit-modal" style="float: right;"><img src="static/exit-modal.png" style="height: 80px;"></button>
           <h1>Adjudicate</h1>
           <p class="body-text adjudicator-explainer">If you can’t decide on a path forward, you can choose to call on an “ajudicator” to mediate. <br> <br> This will select a path for you. Like all decisions, it’s non-reversible.</p>
         </div>
@@ -31,6 +32,12 @@
     const adjudicate = document.getElementById('adjudicate');
     adjudicate.addEventListener('click', () => {
       socket.emit('adjudicate');
+    });
+
+    const exitModal = document.getElementById('exit-modal');
+    exitModal.addEventListener('click', () => {
+      console.log("exit")
+      document.getElementById('modal').classList.remove('visible');
     });
 
     const what = document.getElementById('what');

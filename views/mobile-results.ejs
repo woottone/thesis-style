@@ -11,12 +11,18 @@
     </script>
   </head>
   <body style="background-image: url(static/mobile-results-background.jpg); background-position: left top; background-size: cover;">
-    <div class="mobile-results-container mobile-container">
-      <button id="back" class="back-button mobile-results-back button" style="background-image: url(static/back-button.png); background-size: cover;">Back</button>
-      <button id="adjudicate" class="adjudicate-button">Adjudicate</button>
-    </div>
+      <div class="mobile-results-container mobile-container">
+        <div id="modal" class="modal">
+          <h1>Adjudicate</h1>
+          <p class="body-text adjudicator-explainer">If you can’t decide on a path forward, you can choose to call on an “ajudicator” to mediate. <br> <br> This will select a path for you. Like all decisions, it’s non-reversible.</p>
+        </div>
+          <button id="back" class="back-button mobile-results-back button">Back</button>
+          <button id="adjudicate" class="adjudicate-button button body-text">Adjudicate</button>
+          <button id="what" class="button whats-this body-text">What's this<img src="static/whats-this.png" style="height: 80px;"></button>
+      </div>
   </body>
   <script>
+    let open = false;
     const button = document.getElementById('back');
     button.addEventListener('click', () => {
       socket.emit('back');
@@ -26,5 +32,20 @@
     adjudicate.addEventListener('click', () => {
       socket.emit('adjudicate');
     });
+
+    const what = document.getElementById('what');
+    what.addEventListener('click', () => {
+      if(open == false){
+      document.getElementById('modal').classList.add('visible');
+      // document.getElementById('background-overlay').classList.add('visible');
+      open = true; 
+      }
+      else{
+      document.getElementById('modal').classList.remove('visible');
+      // document.getElementById('background-overlay').classList.remove('visible');
+      open = false;
+      }
+    });
+
   </script>
 </html>

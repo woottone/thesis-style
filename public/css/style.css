@@ -267,8 +267,19 @@ button:disabled{
 
 /* waiting screen */
 
+.waiting-container{
+    display: grid;
+    height: 100%;
+    grid-template-rows: 10% 15% 15% 10% 5% 5% 5% 14% 5%;
+    grid-template-columns: 10% 15% 1fr 1fr 15% 10%;
+}
+
 .waiting{
-    background-image: url(/static/wait-for-players.png);
+    /* background-image: url(/static/wait-for-players.png);
+    background-size: cover; */
+    height: 100%;
+    width: 100%;
+    background-color: #e9f6ff;
 }
 
 /* mobile results screen */

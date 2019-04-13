@@ -113,7 +113,7 @@ module.exports = {
         mobileTemplate: 'mobile-results',
         resetResults: true,
         text: 'whatever2',
-        image: 'image2.png',
+        image: 'results-background.png',
       },
     ],
   },

@@ -190,8 +190,10 @@ h1{
 }
 
 .mobile-waiting{
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+    grid-column: 2 / 6;
+    text-align: center;
+    font-size: 55px;
 }
 
 .mobile-waiting-button{
@@ -242,6 +244,8 @@ h1{
 }
 .radio{
     /* display: inline-block; */
+    width: 40px !important;
+    height: 40px !important;
 }
 
 .mobile-decision-container{
@@ -268,6 +272,13 @@ button:disabled{
     grid-column: 2 / 6;
 }
 
+/* waiting screen */
+
+.waiting{
+    background-image: url(/static/wait-for-players.png);
+    background
+}
+
 /* results screen */
 
 .mobile-results-container{
@@ -283,4 +294,39 @@ button:disabled{
 .adjudicate-button{
     grid-column: 2;
     grid-row: 2;
+}
+
+/* desktop results screen */
+
+.results-container{
+    /* display: grid;
+    height: 100%; */
+    /* grid-template-columns: 10% 1fr 10%; */
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+    margin-top: 15%;
+}
+
+.choice-print{
+    float: left;
+}
+
+.choice-title{
+    width: 200px;
+    height: 75px;
+    padding: 20px;
+    margin: 20px 0 0 20px;
+    background-color: #ffffff;
+    box-shadow: 6px 6px 0px 1px #d0e4f4;
+    /* float: left; */
+}
+
+.choice-result{
+    width: 200px;
+    height: 200px;
+    background-color: #d0e4f4;
+    margin: 20px 0 0 20px;
+    padding: 20px;
+
 }

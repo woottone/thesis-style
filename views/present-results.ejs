@@ -10,20 +10,21 @@
       });
     </script>
   </head>
-  <body>
-    <div style="background-image: url(static/results-background.png); background-position: left top; background-size: cover;">
+  <body style="background-image: url(static/<%= image %>); background-position: left top; background-size: cover;">
       <div class="results-container">
-        <% const resultsByChoice = choices.map(() => []);%>
-        <% Object.keys(results).forEach(player => resultsByChoice[results[player]].push(player)); %>
-
-        <%resultsByChoice.forEach((players, choiceNumber) => { %>
-          <!-- going to do each once per result -->
-          <!-- choiceNumber is index, choices is array of names -->
-          <h2><%=choices[choiceNumber]%></h2>
-          <%players.forEach(player => {%>
-            <div><%= player %></div>
-            <!-- = prints it out -->
-            <!-- put out one div for each player that voted for this choice -->
+          <% const resultsByChoice = choices.map(() => []);%>
+          <% Object.keys(results).forEach(player => resultsByChoice[results[player]].push(player)); %>
+          <%resultsByChoice.forEach((players, choiceNumber) => { %>
+            <!-- going to do each once per result -->
+            <!-- choiceNumber is index, choices is array of names -->
+            <div class="choice-print">
+              <div class="choice-title body-text"><%=choices[choiceNumber]%></div>
+              <%players.forEach(player => {%>
+                <div class="choice-result body-text"><p style="margin: 0 auto;"><%= player %></p></div>
+                <!-- = prints it out -->
+                <!-- put out one div for each player that voted for this choice -->
+            </div>
+      </div>
             <%});%>
         <%});%>
 
@@ -32,7 +33,6 @@
           <%= player %>:<%= results[player] %>
         </div>
       <% }); %> -->
-    </div>
     </div>
   </body>
 </html>

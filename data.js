@@ -136,7 +136,7 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'But his daughter feels more stressed, with the sudden responsibility of looking after her mother.<br><br>Because of her natural inclination to be nurturing, she often feels emotionally drained.',
+        text: 'But with the sudden responsibility of looking after her mother, his daughter feels stressed.<br><br>Because of her natural inclination to be nurturing, she often feels emotionally drained.',
         image: 'maria-background.jpg',
       },
       {
@@ -323,9 +323,8 @@ module.exports = {
   },
   path3a_antibiotics: {
     destinations: [
-      'maria',
-      'bob',
-      'joe',
+      'path4a_everyoneGo',
+      'path4b_2stay',
     ],
     choices: [
       'Everyone goes to the motel',
@@ -410,9 +409,8 @@ module.exports = {
   },
   path3b_pass: {
     destinations: [
-      'maria',
-      'bob',
-      'joe',
+      'path3b1_forNow',
+      'path3b2_push',
     ],
     choices: [
       'Give her antibiotics for now',
@@ -443,9 +441,8 @@ module.exports = {
   },
   path3b1_forNow: {
     destinations: [
-      'maria',
-      'bob',
-      'joe',
+      'path4a_everyoneGo',
+      'path4b_2stay',
     ],
     choices: [
       'Everyone goes to the motel',
@@ -530,9 +527,8 @@ module.exports = {
   },
   path3b2_push: {
     destinations: [
-      'maria',
-      'bob',
-      'joe',
+      'path4a_everyoneGo',
+      'path4b_2stay',
     ],
     choices: [
       'Everyone goes to the motel',
@@ -627,83 +623,60 @@ module.exports = {
       },
     ]
   },
-  joe: {
-    destinations: [
-      'maria',
-      'bob',
-      'joe',
-    ],
-    steps: [
+  path4a_everyoneGo: {
+    steps : [
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'joe step 1',
-        image: 'image.png',
+        text: 'The whole family goes back to the motel. It’s not often that everyone is together in one place, so it’s nice spending time with each other despite the circumstances.',
+        image: 'harris-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'whatever2',
-        image: 'image2.png',
+        text: 'The next day everyone goes to the hospital and they spend the day making her as comfortable as possible.<br><br>They hold her hand and sing her the songs that she used to sing to them as children.<br><br>Later that night she passes away in her sleep.',
+        image: 'maria-background.jpg',
       },
       {
-        presentTemplate: 'present-decision',
-        mobileTemplate: 'mobile-decision',
-        resetResults: true,
-        text: 'whatever2',
-        image: 'image2.png',
-        destinations: [
-          'maria',
-          'bob',
-          'joe',
-        ]
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Despite his grief, Harris feels at peace and relieved that they were able to make the decision that was best for her.',
+        image: 'harris-background.jpg',
       },
       {
-        presentTemplate: 'present-results',
-        mobileTemplate: 'mobile-results',
-        resetResults: true,
-        text: 'whatever2',
-        image: 'image2.png',
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'His family helps him return to his life on his own. It’s an adjustment, but over time he gets used it.<br><br>Over the next year, he perfects his baking recipes and continues making tins for his family under “Grandpa’s bake shop”.',
+        image: 'harris-background.jpg',
       },
-    ],
+    ]
   },
-  path1: {
-    destinations: [
-      'path1',
-      'path2',
-      'path3',
-    ],
-    steps: [
-      {
-        presentTemplate: 'info',
-        mobileTemplate: 'look-at-screen',
-        text: 'path 1',
-        image: 'image.png',
-      },
-      {
-        presentTemplate: 'info',
-        mobileTemplate: 'look-at-screen',
-        text: 'whatever2',
-        image: 'image2.png',
-      },
-      {
-        presentTemplate: 'present-decision',
-        mobileTemplate: 'mobile-decision',
-        resetResults: true,
-        text: 'whatever2',
-        image: 'image2.png',
-        choices: [
-          'make him stay',
-          'do something else',
-        ],
-      },
-      {
-        presentTemplate: 'present-results',
-        mobileTemplate: 'mobile-results',
-        resetResults: true,
-        text: 'whatever2',
-        image: 'image2.png',
-      },
+      path4b_2stay: {
+        steps : [
+          {
+            presentTemplate: 'info',
+            mobileTemplate: 'look-at-screen',
+            text: 'The family decides that Maria shouldn’t be alone. Two of them stay at the hospital overnight with her, and the rest go back to the motel.',
+            image: 'harris-background.jpg',
+          },
+          {
+            presentTemplate: 'info',
+            mobileTemplate: 'look-at-screen',
+            text: 'The next day everyone goes to the hospital and they spend the day making her as comfortable as possible.<br><br>They hold her hand and sing her the songs that she used to sing to them as children.<br><br>Later that night she passes away in her sleep.',
+            image: 'maria-background.jpg',
+          },
+          {
+            presentTemplate: 'info',
+            mobileTemplate: 'look-at-screen',
+            text: 'Despite his grief, Harris feels at peace and relieved that they were able to make the decision that was best for her.',
+            image: 'harris-background.jpg',
+          },
+          {
+            presentTemplate: 'info',
+            mobileTemplate: 'look-at-screen',
+            text: 'His family helps him return to his life on his own. It’s an adjustment, but over time he gets used it.<br><br>Over the next year, he perfects his baking recipes and continues making tins for his family under “Grandpa’s bake shop”.',
+            image: 'harris-background.jpg',
+          },
     ]
   },
 }

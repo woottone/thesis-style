@@ -119,9 +119,8 @@ module.exports = {
   },
   path2a_family: {
     destinations: [
-      'path1',
-      'path2',
-      'path3',
+      'path3a_antibiotics',
+      'path3b_pass',
     ],
     choices: [
       'Give her antibiotics so the rest of their family can get there',
@@ -138,7 +137,7 @@ module.exports = {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
         text: 'But his daughter feels more stressed, with the sudden responsibility of looking after her mother.<br><br>Because of her natural inclination to be nurturing, she often feels emotionally drained.',
-        image: 'image2.png',
+        image: 'maria-background.jpg',
       },
       {
         presentTemplate: 'info',
@@ -188,9 +187,8 @@ module.exports = {
   },
   path2b_residence: {
     destinations: [
-      'path1',
-      'path2',
-      'path3',
+      'path3a_antibiotics',
+      'path3b_pass',
     ],
     choices: [
       'Give her antibiotics so the rest of their family can get there',
@@ -207,7 +205,7 @@ module.exports = {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
         text: 'Unfortunately, Maria doesn’t get involved in the community as much as Harris had hoped.<br><br>He starts to worry that it was a very drastic change for her, and that a new environment may have been worse for her health.',
-        image: 'image2.png',
+        image: 'maria-background.jpg',
       },
       {
         presentTemplate: 'info',
@@ -255,24 +253,363 @@ module.exports = {
       },
     ]
   },
-  bob: {
+  path2c_stay: {
+    destinations: [
+      'path3a_antibiotics',
+      'path3b_pass',
+    ],
+    choices: [
+      'Give her antibiotics so the rest of their family can get there',
+      'Don’t give her antibiotics (let the infection run its course)',
+    ],
+    steps: [
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris decides to bring more formal caregiving support to their house.<br><br>Harris feels less stressed and is able to be more socially active. Both he and Maria are happy they were able to stay in their own home.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Unfortunately, the CCAC doesn’t provide as many hours as he and Maria actually need, and so a lot of the burden still falls onto him.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'One day Harris goes to give Maria a bath and discovers dark bruising on her abdomen.<br><br>He asks a neighbour, who is a retired nurse, to take a look and she recommends they go to the hospital.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'At the hospital, Maria is examined and given medication to help deal with the pain.<br><br>The doctors think its internal bleeding, and they run some tests to confirm.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'When the tests come back, they find out that it’s an infection that’s rapidly spread through a large portion of her abdomen.<br><br>They can start antibiotics to slow it down, but they’ll have to operate to remove it entirely.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'If they operate, it means removing all of the infected area, which will result in a large wound. It will take months in the hospital to heal.<br><br>Maria’s quality of life will be permanently reduced. They can’t say how much it will be impacted, because they don’t know the extent of the infection.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Because of the pain medication, Maria is incapacitated. Harris has to make the decision and give consent as her Secondary Decision Maker (SDM).<br><br>One of his sons and his wife are with him, but the rest of the family are all a few hours away and likely wouldn’t be able to get there until the next day.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision',
+        resetResults: true,
+        text: 'whatever2',
+        image: 'decision-background.jpg',
+      },
+      {
+        presentTemplate: 'present-results',
+        mobileTemplate: 'mobile-results',
+        resetResults: true,
+        text: 'whatever2',
+        image: 'image2.png',
+      },
+    ]
+  },
+  path3a_antibiotics: {
     destinations: [
       'maria',
       'bob',
       'joe',
     ],
+    choices: [
+      'Everyone goes to the motel',
+      'Some stay, some go to the motel',
+    ],
     steps : [
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'bob step 1',
-        image: 'image.png',
+        text: 'Harris decides to give Maria antibiotics. They stay with her most of the night, and then check into a nearby motel to get some sleep.',
+        image: 'harris-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
+        text: 'The next day most of Harris’s family is able to get to the hospital.<br><br>They all take turns seeing her, because the ICU is too small for the entire family to fit. Because of the infection, everyone has to wear gowns, masks and gloves.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris sits by her bed reciting his poems to her, holding her hand and stroking her hair.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Now that they’ve had time to run more tests, they’ve found that the infection runs deep.<br><br>If they were to operate, it would be a very difficult recovery for Maria. It will take months in the hospital to heal, and she will have a large, permanent wound.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Having grieved as he watched his wife slowly slip away for the last few years, Harris feels ready to let her pass away.<br><br>Now that everyone is together, the family is able to discuss what they think should be done, and what Maria would have wanted.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris makes the decision to discontinue antibiotics and have the doctors make her as comfortable as possible.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'But because they never created an Advance Care Plan (ACP), it’s difficult to convince the doctor that they’re acting in the best interests of Maria and doing what she would have wanted.<br><br>The doctor needs some sort of proof to be able to authorize it.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris goes into his legal documents to retrieve hand-written paper where he and Maria wrote down their wishes.<br><br>It helps support their case, but it isn’t a legal document. Harris still has to have a lengthy discussion with the doctor to convince her they’re making the decision Maria would have if she were able.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'The doctor eventually agrees.<br><br>They discontinue the antibiotics and shift towards comfort, rather than curative care for Maria.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'The doctors tell Harris and the family that they’re not sure how long it will be, it could be hours, it could be days.<br><br>Exhausted, the family has to decide whether to go back to the motel or stay with Maria at the hospital.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision',
+        resetResults: true,
         text: 'whatever2',
         image: 'image2.png',
+      },
+      {
+        presentTemplate: 'present-results',
+        mobileTemplate: 'mobile-results',
+        resetResults: true,
+        text: 'whatever2',
+        image: 'image2.png',
+      },
+    ]
+  },
+  path3b_pass: {
+    destinations: [
+      'maria',
+      'bob',
+      'joe',
+    ],
+    choices: [
+      'Give her antibiotics for now',
+      'Push for them to let her pass away',
+    ],
+    steps : [
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris decides to not give Maria antibiotics, but the doctor pushes back against Harris.<br><br>Because it’s still too early to tell the extent of the infection, she doesn’t think it’s the right call to make. She recommends that Harris start antibiotics to at least slow down the infection until they can assess the situation further.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision',
+        resetResults: true,
+        text: 'whatever2',
+        image: 'image2.png',
+      },
+      {
+        presentTemplate: 'present-results',
+        mobileTemplate: 'mobile-results',
+        resetResults: true,
+        text: 'whatever2',
+        image: 'image2.png',
+      },
+    ]
+  },
+  path3b1_forNow: {
+    destinations: [
+      'maria',
+      'bob',
+      'joe',
+    ],
+    choices: [
+      'Everyone goes to the motel',
+      'Some stay, some go to the motel',
+    ],
+    steps : [
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris agrees to give Maria antibiotics for now. They stay with her most of the night, and then check into a nearby motel to get some sleep.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'The next day most of Harris’s family is able to get to the hospital.<br><br>They all take turns seeing her, because the ICU is too small for the entire family to fit. Because of the infection, everyone has to wear gowns, masks and gloves.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris sits by her bed reciting his poems to her, holding her hand and stroking her hair.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Now that they’ve had time to run more tests, they’ve found that the infection runs deep.<br><br>If they were to operate, it would be a very difficult recovery for Maria. It will take months in the hospital to heal, and she will have a large, permanent wound.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Having grieved as he watched his wife slowly slip away for the last few years, Harris feels ready to let her pass away.<br><br>Now that everyone is together, the family is able to discuss what they think should be done, and what Maria would have wanted.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris makes the decision to discontinue antibiotics and have the doctors make her as comfortable as possible.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'But because they never created an Advance Care Plan (ACP), it’s difficult to convince the doctor that they’re acting in the best interests of Maria and doing what she would have wanted.<br><br>The doctor needs some sort of proof to be able to authorize it.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris goes into his legal documents to retrieve hand-written paper where he and Maria wrote down their wishes.<br><br>It helps support their case, but it isn’t a legal document. Harris still has to have a lengthy discussion with the doctor to convince her they’re making the decision Maria would have if she were able.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'The doctor eventually agrees.<br><br>They discontinue the antibiotics and shift towards comfort, rather than curative care for Maria.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'The doctors tell Harris and the family that they’re not sure how long it will be, it could be hours, it could be days.<br><br>Exhausted, the family has to decide whether to go back to the motel or stay with Maria at the hospital.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision',
+        resetResults: true,
+        text: 'whatever2',
+        image: 'image2.png',
+      },
+      {
+        presentTemplate: 'present-results',
+        mobileTemplate: 'mobile-results',
+        resetResults: true,
+        text: 'whatever2',
+        image: 'image2.png',
+      },
+    ]
+  },
+  path3b2_push: {
+    destinations: [
+      'maria',
+      'bob',
+      'joe',
+    ],
+    choices: [
+      'Everyone goes to the motel',
+      'Some stay, some go to the motel',
+    ],
+    steps : [
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris decides to push back against the recommendations of the doctor and won’t give consent for her to be given antibiotics.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'But because he doesn’t have ACP documentation, the doctor can’t authorize the discontinuation of antibiotics until more tests are run.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris agrees to give Maria antibiotics for now. They stay with her most of the night, and then check into a nearby motel to get some sleep.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'The next day most of Harris’s family is able to get to the hospital.<br><br>They all take turns seeing her, because the ICU is too small for the entire family to fit. Because of the infection, everyone has to wear gowns, masks and gloves.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris sits by her bed reciting his poems to her, holding her hand and stroking her hair.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Now that they’ve had time to run more tests, they’ve found that the infection runs deep.<br><br>If they were to operate, it would be a very difficult recovery for Maria. It will take months in the hospital to heal, and she will have a large, permanent wound.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Having grieved as he watched his wife slowly slip away for the last few years, Harris feels ready to let her pass away.<br><br>Now that everyone is together, the family is able to discuss what they think should be done, and what Maria would have wanted.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris makes the decision to discontinue antibiotics and have the doctors make her as comfortable as possible.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'But because they never created an Advance Care Plan (ACP), it’s difficult to convince the doctor that they’re acting in the best interests of Maria and doing what she would have wanted.<br><br>The doctor needs some sort of proof to be able to authorize it.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris goes into his legal documents to retrieve hand-written paper where he and Maria wrote down their wishes.<br><br>It helps support their case, but it isn’t a legal document. Harris still has to have a lengthy discussion with the doctor to convince her they’re making the decision Maria would have if she were able.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'The doctor eventually agrees.<br><br>They discontinue the antibiotics and shift towards comfort, rather than curative care for Maria.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'The doctors tell Harris and the family that they’re not sure how long it will be, it could be hours, it could be days.<br><br>Exhausted, the family has to decide whether to go back to the motel or stay with Maria at the hospital.',
+        image: 'harris-background.jpg',
       },
       {
         presentTemplate: 'present-decision',

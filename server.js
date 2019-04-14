@@ -10,7 +10,7 @@ app.use(cookieParser())
 app.use('/static', express.static('static'))
 app.use('/public', express.static('public'))
 
-let currentPath = 'intro';
+let currentPath = 'path1_intro';
 let currentStep = 0;
 
 let results = {};
@@ -79,7 +79,7 @@ io.on('connection', socket => {
 
   socket.on('exit', () => {
     currentStep = 0;
-    currentPath = 'intro';
+    currentPath = 'path1_intro';
     results = {};
     allPlayers = new Set();
     isStarted = false;

@@ -12,16 +12,21 @@ app.use('/public', express.static('public'))
 
 let currentPath = 'path1_intro';
 let currentStep = 0;
+// let nextStep = 0;
 
 let results = {};
 
 let allPlayers = new Set();
 let isStarted = false;
 
+let currentData; 
+
 app.set('view engine', 'ejs');
 
 app.get('/present', (req, res) => {
-  const currentData = data[currentPath].steps[currentStep];
+  currentData = data[currentPath].steps[currentStep];
+  // nextStep = data[currentPath].steps[currentStep].to;
+
   if (!results[currentPath]) {
     results[currentPath] = {};
   }
@@ -68,12 +73,21 @@ io.on('connection', socket => {
 
   socket.on('next', () => {
     currentStep++;
+    // if(reset){
+    //   results = {};
+    // };
     io.emit('reload');
   });
 
   socket.on('back', () => {
     currentStep--;
     results[currentPath] = {};
+    io.emit('reload');
+  });
+
+  socket.on('newDecision', () => {
+    currentStep++;
+    results = {};
     io.emit('reload');
   });
 
@@ -120,7 +134,37 @@ io.on('connection', socket => {
       io.emit('reload');
     }
   })
+
+  socket.on('choiceGoTo', i => {
+    const currentResults = results[currentPath]
+    currentResults[cookies.name] = i;
+
+    const players = Object.keys(currentResults);
+
+    console.log(currentResults);
+    console.log(players);
+    console.log(allPlayers);
+    if (players.length === allPlayers.size) {
+      const firstChoice = currentResults[players[0]];
+      for (let i = 1; i < players.length; i++) {
+        if (currentResults[players[i]] !== firstChoice) {
+          currentStep = currentData.to;
+          io.emit('reload');
+          return;
+        }
+      }
+      currentPath = data[currentPath].destinations[firstChoice];
+      currentStep = 0;
+      io.emit('reload');
+    }
+  })
+
 });
+
+// socket.on('goTo', () => {
+//   currentStep = nextStep;
+//   io.emit('reload');
+// });
 
 server.listen(80);
 

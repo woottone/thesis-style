@@ -17,17 +17,29 @@
           <h1>Adjudicate</h1>
           <p class="body-text adjudicator-explainer">This will select the choice for you. If you can’t decide on a path forward, you can choose to call on an “ajudicator” to mediate. <br><br> Like all decisions, it’s non-reversible.</p>
         </div>
-          <button id="back" class="back-button mobile-results-back button">Back</button>
-          <button id="adjudicate" class="adjudicate-button button body-text">Adjudicate</button>
+        <button data-event="newDecision" class="next-button mobile-nav-button button">Next</button>
+          <!-- <button id="adjudicate" class="adjudicate-button button body-text">Adjudicate</button> -->
           <button id="what" class="button whats-this body-text">What's this<img src="static/whats-this.png" style="height: 80px;"></button>
       </div>
   </body>
   <script>
     let open = false;
-    const button = document.getElementById('back');
-    button.addEventListener('click', () => {
-      socket.emit('back');
-    });
+    // const button = document.getElementById('back');
+    // button.addEventListener('click', () => {
+    //   socket.emit('back');
+    // });
+
+    // const next = document.getElementById('next');
+    // button.addEventListener('click', () => {
+    //   socket.emit('next');
+    // });
+
+    document.querySelectorAll('button').forEach(button => {
+        const eventName = button.dataset.event;
+        button.addEventListener('click', () => {
+          socket.emit(eventName);
+        });
+      });
 
     const adjudicate = document.getElementById('adjudicate');
     adjudicate.addEventListener('click', () => {

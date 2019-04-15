@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="public/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      socket.on('test', data => {
+        console.log('socket test', data);
+      });
+
+      socket.on('reload', () => {
+        window.location.reload();
+      });
+    </script>
+    <style>
+      #waiting {
+        height: 100%;
+        width: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* background-image: url(static/mobile-decision-background.jpg); */
+        background-color: #e9f6ff;
+      }
+      #waiting.visible {
+        display: block;
+      }
+    </style>
+  </head>
+  <body style="background-image: url(static/mobile-decision-background.jpg); background-position: left top; background-size: cover;">
+    <div class="mobile-container mobile-decision-container">
+      <div id="waiting" class="waiting">
+        <div class="waiting-container">
+          <div class="logo-background"></div>
+          <h1 class="mobile-waiting">Waiting for other players...</h1>
+        </div>
+      </div>
+      <div class="radio-div">
+        <% for (let i = 0; i < choices.length; i++) { %>
+          <div style="display: flex;">
+            <input class="radio" type="radio" id="radio-<%= i %>" name="radio">
+            <label for="radio-<%= i %>" class="radio-label"><%= choices[i] %></label>
+          </div>
+        <% } %>
+      </div>
+      <button id="adjudicate" class="adjudicate-button button body-text">Adjudicate</button>
+      <button disabled id="submit" class="decision-submit button">submit</button>
+      <!-- disabled means clicking on the button won't do anything, but can add css to it (button:disabled{background image}) -->
+    </div>
+    <script>
+      const button = document.getElementById('submit');
+      const radios = Array.from(document.querySelectorAll('.radio'));
+
+      radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+          button.removeAttribute('disabled');
+        });
+        // for every radio add event listener for change event not click
+      });
+
+      button.addEventListener('click', () => {
+        const value = radios.findIndex(el => el.checked);
+        socket.emit('choiceGoTo', value);
+        document.getElementById('waiting').classList.add('visible');
+      });
+    </script>
+  </body>
+</html>

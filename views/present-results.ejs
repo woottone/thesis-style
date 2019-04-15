@@ -12,6 +12,7 @@
   </head>
   <body style="background-image: url(static/<%= image %>); background-position: left top; background-size: cover;">
       <div class="results-container">
+          <button class="exit-button button" id="exit"><img src="static/exit-modal.png" style="height: 30px;"></button>
           <% const resultsByChoice = choices.map(() => []);%>
           <% Object.keys(results).forEach(player => resultsByChoice[results[player]].push(player)); %>
           <%resultsByChoice.forEach((players, choiceNumber) => { %>
@@ -34,5 +35,10 @@
         </div>
       <% }); %> -->
     </div>
+    <script>
+      const button = document.getElementById('exit').addEventListener('click', () => {
+        socket.emit('exit');
+      });
+    </script>
   </body>
 </html>

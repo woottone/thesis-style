@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="public/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      socket.on('test', data => {
+        console.log('socket test', data);
+      });
+
+      socket.on('reload', () => {
+        window.location.reload();
+      });
+    </script>
+    <style>
+      #waiting {
+        height: 100%;
+        width: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* background-image: url(static/mobile-decision-background.jpg); */
+        background-color: #e9f6ff;
+      }
+      #waiting.visible {
+        display: block;
+      }
+    </style>
+  </head>
+  <body style="background-image: url(static/mobile-decision-background.jpg); background-position: left top; background-size: cover;">
+    <div class="mobile-container mobile-decision-container">
+
+      
+      <div id="waiting" class="waiting">
+        <div class="waiting-container">
+          <div class="logo-background"></div>
+          <h1 class="mobile-waiting">Waiting for other players...</h1>
+        </div>
+      </div>
+      <div id="modal" class="modal">
+          <button class="exit-modal button" id="exit-modal" style="float: right;"><img src="static/exit-modal.png" style="height: 80px;"></button>
+          <h1>Adjudicate</h1>
+          <p class="body-text adjudicator-explainer">This will select the choice for you. If you can’t decide on a path forward, you can choose to call on an “ajudicator” to mediate. <br><br> Like all decisions, it’s non-reversible.</p>
+        </div>
+      <div class="radio-div">
+        <% for (let i = 0; i < choices.length; i++) { %>
+          <div style="display: flex;">
+            <input class="radio" type="radio" id="radio-<%= i %>" name="radio">
+            <label for="radio-<%= i %>" class="radio-label"><%= choices[i] %></label>
+          </div>
+        <% } %>
+      </div>
+      <button id="adjudicate" class="adjudicate-button button body-text">Random</button>
+      <button disabled id="submit" class="decision-submit button">Submit</button>
+      <button id="what" class="button whats-this body-text">What's this<img src="static/whats-this.png" style="height: 80px;"></button>
+      <!-- disabled means clicking on the button won't do anything, but can add css to it (button:disabled{background image}) -->
+    </div>
+    <script>
+      const button = document.getElementById('submit');
+      const radios = Array.from(document.querySelectorAll('.radio'));
+      let open = false;
+
+      radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+          button.removeAttribute('disabled');
+        });
+        // for every radio add event listener for change event not click
+      });
+
+      button.addEventListener('click', () => {
+        const value = radios.findIndex(el => el.checked);
+        socket.emit('choice', value);
+        document.getElementById('waiting').classList.add('visible');
+      });
+
+      const adjudicate = document.getElementById('adjudicate');
+        adjudicate.addEventListener('click', () => {
+      socket.emit('adjudicate');
+    });
+
+    const what = document.getElementById('what');
+    what.addEventListener('click', () => {
+      if(open == false){
+      document.getElementById('modal').classList.add('visible');
+      // document.getElementById('background-overlay').classList.add('visible');
+      open = true; 
+      }
+      else{
+      document.getElementById('modal').classList.remove('visible');
+      // document.getElementById('background-overlay').classList.remove('visible');
+      open = false;
+      }
+    });
+
+    const exitModal = document.getElementById('exit-modal');
+    exitModal.addEventListener('click', () => {
+      console.log("exit")
+      document.getElementById('modal').classList.remove('visible');
+    });
+    </script>
+  </body>
+</html>

@@ -191,6 +191,14 @@ module.exports = {
         text: 'whatever2',
         image: 'image2.png',
       },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision-random',
+        resetResults: true,
+        image: 'decision-background.jpg',
+        to: 8,
+        // works because it's in an array instead of an object, so it's ordinal
+      },
     ]
   },
   path2b_residence: {
@@ -259,6 +267,14 @@ module.exports = {
         text: 'whatever2',
         image: 'image2.png',
       },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision-random',
+        resetResults: true,
+        image: 'decision-background.jpg',
+        to: 8,
+        // works because it's in an array instead of an object, so it's ordinal
+      },
     ]
   },
   path2c_stay: {
@@ -326,6 +342,14 @@ module.exports = {
         resetResults: true,
         text: 'whatever2',
         image: 'image2.png',
+      },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision-random',
+        resetResults: true,
+        image: 'decision-background.jpg',
+        to: 8,
+        // works because it's in an array instead of an object, so it's ordinal
       },
     ]
   },
@@ -413,6 +437,14 @@ module.exports = {
         text: 'whatever2',
         image: 'image2.png',
       },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision-random',
+        resetResults: true,
+        image: 'decision-background.jpg',
+        to: 11,
+        // works because it's in an array instead of an object, so it's ordinal
+      },
     ]
   },
   path3b_pass: {
@@ -444,6 +476,14 @@ module.exports = {
         resetResults: true,
         text: 'whatever2',
         image: 'image2.png',
+      },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision-random',
+        resetResults: true,
+        image: 'decision-background.jpg',
+        to: 2,
+        // works because it's in an array instead of an object, so it's ordinal
       },
     ]
   },
@@ -530,6 +570,14 @@ module.exports = {
         resetResults: true,
         text: 'whatever2',
         image: 'image2.png',
+      },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision-random',
+        resetResults: true,
+        image: 'decision-background.jpg',
+        to: 11,
+        // works because it's in an array instead of an object, so it's ordinal
       },
     ]
   },
@@ -628,6 +676,14 @@ module.exports = {
         resetResults: true,
         text: 'whatever2',
         image: 'image2.png',
+      },
+      {
+        presentTemplate: 'present-decision',
+        mobileTemplate: 'mobile-decision-random',
+        resetResults: true,
+        image: 'decision-background.jpg',
+        to: 13,
+        // works because it's in an array instead of an object, so it's ordinal
       },
     ]
   },

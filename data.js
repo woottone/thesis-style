@@ -709,7 +709,7 @@ module.exports = {
       },
       {
         presentTemplate: 'info',
-        mobileTemplate: 'look-at-screen',
+        mobileTemplate: 'look-at-screen-final',
         text: 'His family helps him return to his life on his own. It’s an adjustment, but over time he gets used it.<br><br>Over the next year, he perfects his baking recipes and continues making tins for his family under “Grandpa’s bake shop”.',
         image: 'harris-background.jpg',
       },
@@ -737,7 +737,7 @@ module.exports = {
           },
           {
             presentTemplate: 'info',
-            mobileTemplate: 'look-at-screen',
+            mobileTemplate: 'look-at-screen-final',
             text: 'His family helps him return to his life on his own. It’s an adjustment, but over time he gets used it.<br><br>Over the next year, he perfects his baking recipes and continues making tins for his family under “Grandpa’s bake shop”.',
             image: 'harris-background.jpg',
           },

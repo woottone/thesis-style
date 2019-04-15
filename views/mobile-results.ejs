@@ -12,22 +12,27 @@
   </head>
   <body style="background-image: url(static/mobile-results-background.jpg); background-position: left top; background-size: cover;">
       <div class="mobile-results-container mobile-container">
-        <div id="modal" class="modal">
+        <!-- <div id="modal" class="modal">
           <button class="exit-modal button" id="exit-modal" style="float: right;"><img src="static/exit-modal.png" style="height: 80px;"></button>
           <h1>Adjudicate</h1>
           <p class="body-text adjudicator-explainer">This will select the choice for you. If you can’t decide on a path forward, you can choose to call on an “ajudicator” to mediate. <br><br> Like all decisions, it’s non-reversible.</p>
-        </div>
+        </div> -->
           <!-- <button id="next" class="back-button mobile-results-back button">Next</button> -->
-          <button data-event="back" id="back" class="next-button mobile-nav-button button" style="background-image: url(static/next-button)">Next</button>
-          <!-- <button id="adjudicate" class="adjudicate-button button body-text">Adjudicate</button> -->
-          <button id="what" class="button whats-this body-text">What's this<img src="static/whats-this.png" style="height: 80px;"></button>
+          <button data-event="random" id="random" class="next-button mobile-nav-button button" style="background-image: url(static/next-button)">Next</button> 
+          <!-- <button id="what" class="button whats-this body-text">What's this<img src="static/whats-this.png" style="height: 80px;"></button> -->
       </div>
   </body>
   <script>
     let open = false;
     const button = document.getElementById('back');
+   
     button.addEventListener('click', () => {
       socket.emit('back');
+    });
+
+    const adjudicate = document.getElementById('random');
+    adjudicate.addEventListener('click', () => {
+      socket.emit('random');
     });
 
     const adjudicate = document.getElementById('adjudicate');

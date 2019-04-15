@@ -12,6 +12,7 @@ app.use('/public', express.static('public'))
 
 let currentPath = 'path1_intro';
 let currentStep = 0;
+let currentState = false;
 
 let results = {};
 
@@ -31,7 +32,7 @@ app.get('/present', (req, res) => {
     return;
   }
 
-  res.render(currentData.presentTemplate, { ...currentData, results: results[currentPath], choices: data[currentPath].choices});
+  res.render(currentData.presentTemplate, { ...currentData, currentState: currentState[currentPath], results: results[currentPath], choices: data[currentPath].choices});
 });
 
 app.get('/', (req, res) => {
@@ -77,6 +78,13 @@ io.on('connection', socket => {
     io.emit('reload');
   });
 
+  socket.on('random', () => {
+    currentStep--;
+    currentState = true;
+    results[currentPath] = {};
+    io.emit('reload');
+  });
+
   socket.on('exit', () => {
     currentStep = 0;
     currentPath = 'path1_intro';
@@ -103,13 +111,14 @@ io.on('connection', socket => {
     const players = Object.keys(currentResults);
 
     console.log(currentResults);
-    console.log(players);
-    console.log(allPlayers);
+    // console.log(players);
+    // console.log(allPlayers);
     if (players.length === allPlayers.size) {
       const firstChoice = currentResults[players[0]];
       for (let i = 1; i < players.length; i++) {
         if (currentResults[players[i]] !== firstChoice) {
           currentStep++;
+          currentState = false;
           io.emit('reload');
           return;
         }

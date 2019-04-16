@@ -34,7 +34,7 @@
 /* global styling */
 body{
     margin: 0px !important;
-    overflow: none !important;
+    /* overflow: hidden; */
     background-color: #e9f6ff;
 }
 
@@ -124,7 +124,7 @@ h1{
 
 .mobile-nav-button{
     font-family: 'Karla';
-    font-size: 21px;
+    font-size: 55px;
     grid-row-start: 2;
     grid-row-end: 3;
 }
@@ -213,7 +213,7 @@ h1{
 /* look-at-screen */
 
 .mobile-look-container{
-    grid-template-columns: 10% 45% 45% 10%;
+    grid-template-columns: 10% 40% 40% 10%;
     grid-template-rows: 85% 1fr 5%;
 }
 
@@ -346,6 +346,8 @@ button:disabled{
     display: block;
     width: 50%;
     margin-top: 15%;
+    /* display: flex;
+    flex-direction: row; */
 }
 
 .choice-print{

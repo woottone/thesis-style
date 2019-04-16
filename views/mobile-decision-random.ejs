@@ -29,7 +29,7 @@
       }
     </style>
   </head>
-  <body style="background-image: url(static/mobile-decision-background.jpg); background-size: contain; overflow: none;">
+  <body style="background-image: url(static/mobile-decision-background.jpg); background-size: contain; overflow: none; background-repeat: no-repeat;">
     <div class="mobile-container mobile-decision-container">
         <div id="modal" class="modal">
             <button class="exit-modal button" id="exit-modal" style="float: right;"><img src="static/exit-modal.png" style="height: 80px;"></button>
@@ -50,8 +50,8 @@
           </div>
         <% } %>
       </div>
-      <button id="adjudicate" class="adjudicate-button button body-text">Randomize</button>
-      <button id="what" class="button whats-this body-text">What's this<img src="static/whats-this.png" style="height: 80px;"></button>
+      <!-- <button id="adjudicate" class="adjudicate-button button body-text">Randomize</button>
+      <button id="what" class="button whats-this body-text">What's this<img src="static/whats-this.png" style="height: 80px;"></button> -->
       <button disabled id="submit" class="decision-submit button">Submit</button>
       <!-- disabled means clicking on the button won't do anything, but can add css to it (button:disabled{background image}) -->
     </div>
@@ -67,10 +67,10 @@
         // for every radio add event listener for change event not click
       });
 
-      const adjudicate = document.getElementById('adjudicate');
-        adjudicate.addEventListener('click', () => {
-      socket.emit('adjudicate');
-    });
+    //   const adjudicate = document.getElementById('adjudicate');
+    //     adjudicate.addEventListener('click', () => {
+    //     socket.emit('adjudicate');
+    // });
 
       button.addEventListener('click', () => {
         const value = radios.findIndex(el => el.checked);

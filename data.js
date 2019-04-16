@@ -1,3 +1,4 @@
+// the developer coded all of the functionality on this page & I uploaded all of the data content
 module.exports = {
   path1_intro: {
     //currentPath

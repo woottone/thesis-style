@@ -10,6 +10,7 @@
       });
     </script>
   </head>
+  <!-- I coded all of the HTML/CSS, anywhere that has javascript was done by the developer -->
   <body style="background-image: url(static/<%= image %>); background-size: contain; background-repeat: no-repeat;">
     <button id="exit" data-event="exit" class="exit-button button" style="position: relative; top: 40; left: 90%;"><img src="static/exit-modal.png" style="height: 40px;"></button>
       <div class="results-container">
@@ -28,13 +29,7 @@
                 <%});%>
               </div>
           <%});%>
-            <!-- </div> -->
       </div>
-      <!-- <% Object.keys(results).forEach(player => { %>
-        <div>
-          <%= player %>:<%= results[player] %>
-        </div>
-      <% }); %> -->
     </div>
   </body>
 </html>

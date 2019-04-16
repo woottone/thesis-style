@@ -1,3 +1,4 @@
+// almost all of the code in this file was done by the developer. I added a few things when I needed more functionality, but they were small changes interspersed so I didn't bother pointing them out
 const data = require('./data');
 const express = require('express');
 const app = express();

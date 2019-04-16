@@ -10,11 +10,13 @@
       });
     </script>
   </head>
+  <!-- I coded all of the HTML/CSS -->
   <body style="background-image: url(static/join-background.png); background-position: left top; background-size: cover;">
     <div class="join-container">
       <h1 class="players-joined body-text">Players joined</h1>
       <!-- <button id="exit" data-event="exit" class="exit-button button">Reset</button> -->
       <div class="players">
+        <!-- the developer coded the in-line node.js -->
         <% allPlayers.forEach(player => { %>
           <div class="body-text"><%= player %></div>
         <% }) %>
@@ -24,6 +26,7 @@
       <p class="body-text start-text">1. Grab a friend! <br><br>2. Join on your phone at agd.emmawootton.com<br><br>3. Once everyone has joined hit <em>"Start"</em></p>
     </div>
     <script>
+      // I coded this button based on some of the other code already written
       const button = document.getElementById('exit').addEventListener('click', () => {
         socket.emit('exit');
       });

@@ -29,6 +29,7 @@
       }
     </style>
   </head>
+  <!-- most of the javascript on this page was done by the developer but I added some. I did all of the HTML & CSS -->
   <body style="background-image: url(static/mobile-decision-background.jpg); background-size: contain; overflow: none; background-repeat: no-repeat;">
     <div class="mobile-container mobile-decision-container">
         <!-- <div id="modal" class="modal">
@@ -67,16 +68,13 @@
         // for every radio add event listener for change event not click
       });
 
-    //   const adjudicate = document.getElementById('adjudicate');
-    //     adjudicate.addEventListener('click', () => {
-    //     socket.emit('adjudicate');
-    // });
-
       button.addEventListener('click', () => {
         const value = radios.findIndex(el => el.checked);
         socket.emit('choiceGoTo', value);
         document.getElementById('waiting').classList.add('visible');
       });
+
+      // I created all of the following javascript to open and close a modal window 
 
       const exitModal = document.getElementById('exit-modal');
       exitModal.addEventListener('click', () => {

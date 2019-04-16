@@ -29,8 +29,13 @@
       }
     </style>
   </head>
-  <body style="background-image: url(static/mobile-decision-background.jpg); background-position: left top; background-size: cover;">
+  <body style="background-image: url(static/mobile-decision-background.jpg); background-size: contain; overflow: none;">
     <div class="mobile-container mobile-decision-container">
+        <div id="modal" class="modal">
+            <button class="exit-modal button" id="exit-modal" style="float: right;"><img src="static/exit-modal.png" style="height: 80px;"></button>
+            <h1>Adjudicate</h1>
+            <p class="body-text adjudicator-explainer">This will select the choice for you. If you can’t decide on a path forward, you can choose to call on an “ajudicator” to mediate. <br><br> Like all decisions, it’s non-reversible.</p>
+          </div>
       <div id="waiting" class="waiting">
         <div class="waiting-container">
           <div class="logo-background"></div>
@@ -45,11 +50,13 @@
           </div>
         <% } %>
       </div>
-      <button id="adjudicate" class="adjudicate-button button body-text">Adjudicate</button>
-      <button disabled id="submit" class="decision-submit button">submit</button>
+      <button id="adjudicate" class="adjudicate-button button body-text">Randomize</button>
+      <button id="what" class="button whats-this body-text">What's this<img src="static/whats-this.png" style="height: 80px;"></button>
+      <button disabled id="submit" class="decision-submit button">Submit</button>
       <!-- disabled means clicking on the button won't do anything, but can add css to it (button:disabled{background image}) -->
     </div>
     <script>
+      let open = false;
       const button = document.getElementById('submit');
       const radios = Array.from(document.querySelectorAll('.radio'));
 
@@ -60,11 +67,36 @@
         // for every radio add event listener for change event not click
       });
 
+      const adjudicate = document.getElementById('adjudicate');
+        adjudicate.addEventListener('click', () => {
+      socket.emit('adjudicate');
+    });
+
       button.addEventListener('click', () => {
         const value = radios.findIndex(el => el.checked);
         socket.emit('choiceGoTo', value);
         document.getElementById('waiting').classList.add('visible');
       });
+
+      const exitModal = document.getElementById('exit-modal');
+      exitModal.addEventListener('click', () => {
+      console.log("exit")
+      document.getElementById('modal').classList.remove('visible');
+    });
+
+    const what = document.getElementById('what');
+    what.addEventListener('click', () => {
+      if(open == false){
+      document.getElementById('modal').classList.add('visible');
+      // document.getElementById('background-overlay').classList.add('visible');
+      open = true; 
+      }
+      else{
+      document.getElementById('modal').classList.remove('visible');
+      // document.getElementById('background-overlay').classList.remove('visible');
+      open = false;
+      }
+    });
     </script>
   </body>
 </html>

@@ -213,7 +213,7 @@ h1{
 /* look-at-screen */
 
 .mobile-look-container{
-    grid-template-columns: 5% 45% 45% 5%;
+    grid-template-columns: 10% 45% 45% 10%;
     grid-template-rows: 85% 1fr 5%;
 }
 
@@ -239,12 +239,12 @@ h1{
 }
 .radio{
     /* display: inline-block; */
-    width: 40px !important;
-    height: 40px !important;
+    /* width: 40px !important;
+    height: 40px !important; */
 }
 
 .mobile-decision-container{
-    grid-template-rows: 40% 40% 5% 9% 5%;
+    grid-template-rows: 35% 40% 1% 9% 5%;
     grid-template-columns: 10% 20% 20% 20% 20% 10%;
 }
 
@@ -294,15 +294,21 @@ button:disabled{
     grid-row: 4;
 }
 
-.adjudicate-button{
+.mobile-results-next{
+    background-image: url(/static/next-button.png);
     grid-column: 3;
+    grid-row: 4;
+}
+
+.adjudicate-button{
+    grid-column: 2 / 4;
     grid-row: 4;
     background-image: url(/static/adjudicate-button.png);
 }
 
 .whats-this{
     grid-row: 5;
-    grid-column: 3;
+    grid-column: 2 / 4;
 }
 
 .modal{

@@ -18,90 +18,90 @@ module.exports = {
         text: 'This is Maria.',
         image: 'maria-background.jpg',
       },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'She and her husband, Harris, have been married for over 60 years, and happily retired for 20.<br><br>They currently live in a single-dwelling household in a senior’s community.',
-      //   image: 'harris-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'Maria was a stay-at-home mom when she and her husband were raising their five children.<br><br>Her husband has always worked, and she has always maintained the household.',
-      //   image: 'maria-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'Knitting and baking are a big part of Maria’s life, because she loves making things for her children and all of her grandkids.<br><br>Over time, her worsening arthritis has made this difficult, to the point where she has stopped completely.',
-      //   image: 'maria-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'Harris ends up taking over the baking, and he includes a note in every tin for their children that says “Grandma’s bake shop”.<br><br>He also includes little poems on all the cards, because he loves writing prose.',
-      //   image: 'harris-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'As Maria has gotten older, she’s been dealing with more serious intestinal health issues.<br><br>To improve some of these problems, she had a permanent bypass put in for her colon.',
-      //   image: 'maria-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'Generally she has been able to take care of the maintenance and cleaning of the bypass device on her own.<br><br>In recent years though, she has become more forgetful due to Alzheimer’s.',
-      //   image: 'maria-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'With the combination of the Alzheimer’s and the arthritis, Harris increasingly takes over the maintenance of the device and helping her bathe.',
-      //   image: 'harris-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'Soon he also has to take on the management of her medication.<br><br>Over time, it takes an increasingly higher amount of his time to care for her properly.',
-      //   image: 'harris-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'At the same time, Maria’s health issues reduce her ability and motivation to take care of household tasks such as cleaning and cooking.',
-      //   image: 'maria-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'For the first time in his life, Harris takes on the maintenance of the household by himself.',
-      //   image: 'harris-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'Maria’s health issues also reduce her motivation to do anything social outside of the house.<br><br>The only activities she will leave for are ones that are music related, because music was her whole life.',
-      //   image: 'maria-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'Because Harris is busy taking care of everything, this reduces his social involvement as well. <br><br>Over time he feels more and more isolated and overburdened.',
-      //   image: 'harris-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'As a male, Harris has found it difficult to ask for help.<br><br>Eventually he reaches out for support, and they hire a formal caregiver to come in a few times a week.',
-      //   image: 'harris-background.jpg',
-      // },
-      // {
-      //   presentTemplate: 'info',
-      //   mobileTemplate: 'look-at-screen',
-      //   text: 'Even with the extra help, Harris still feels overwhelmed. He considers moving somewhere with more support.<br><br>He will mostly have to make the decision on his own.',
-      //   image: 'harris-background.jpg',
-      // },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'She and her husband, Harris, have been married for over 60 years, and happily retired for 20.<br><br>They currently live in a single-dwelling household in a senior’s community.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Maria was a stay-at-home mom when she and her husband were raising their five children.<br><br>Her husband has always worked, and she has always maintained the household.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Knitting and baking are a big part of Maria’s life, because she loves making things for her children and all of her grandkids.<br><br>Over time, her worsening arthritis has made this difficult, to the point where she has stopped completely.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Harris ends up taking over the baking, and he includes a note in every tin for their children that says “Grandma’s bake shop”.<br><br>He also includes little poems on all the cards, because he loves writing prose.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'As Maria has gotten older, she’s been dealing with more serious intestinal health issues.<br><br>To improve some of these problems, she had a permanent bypass put in for her colon.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Generally she has been able to take care of the maintenance and cleaning of the bypass device on her own.<br><br>In recent years though, she has become more forgetful due to Alzheimer’s.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'With the combination of the Alzheimer’s and the arthritis, Harris increasingly takes over the maintenance of the device and helping her bathe.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Soon he also has to take on the management of her medication.<br><br>Over time, it takes an increasingly higher amount of his time to care for her properly.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'At the same time, Maria’s health issues reduce her ability and motivation to take care of household tasks such as cleaning and cooking.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'For the first time in his life, Harris takes on the maintenance of the household by himself.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Maria’s health issues also reduce her motivation to do anything social outside of the house.<br><br>The only activities she will leave for are ones that are music related, because music was her whole life.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Because Harris is busy taking care of everything, this reduces his social involvement as well. <br><br>Over time he feels more and more isolated and overburdened.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'As a male, Harris has found it difficult to ask for help.<br><br>Eventually he reaches out for support, and they hire a formal caregiver to come in a few times a week.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Even with the extra help, Harris still feels overwhelmed. He considers moving somewhere with more support.<br><br>He will mostly have to make the decision on his own.',
+        image: 'harris-background.jpg',
+      },
       {
         presentTemplate: 'present-decision',
         mobileTemplate: 'mobile-decision',
@@ -120,7 +120,7 @@ module.exports = {
         mobileTemplate: 'mobile-decision-random',
         resetResults: true,
         image: 'decision-background.jpg',
-        to: 2,
+        to: 16,
         // works because it's in an array instead of an object, so it's ordinal
       },
     ],
@@ -168,13 +168,25 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'If they operate, it means removing all of the infected area, which will result in a large wound. It will take months in the hospital to heal.<br><br>Maria’s quality of life will be permanently reduced. They can’t say how much it will be impacted, because they don’t know the extent of the infection.',
+        text: 'If they operate, it means removing all of the infected area, which will result in a large wound. It will take months in the hospital to heal.',
         image: 'maria-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'Because of the pain medication, Maria is incapacitated. Harris has to make the decision and give consent as her Secondary Decision Maker (SDM).<br><br>One of his sons and his wife are with him, but the rest of the family are all a few hours away and likely wouldn’t be able to get there until the next day.',
+        text: 'Maria’s quality of life will be permanently reduced. They can’t say how much it will be impacted, because they don’t know the extent of the infection.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Because of the pain medication, Maria is incapacitated. Harris has to make the decision and give consent as her Secondary Decision Maker (SDM).',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'One of his sons and his wife are with him, but the rest of the family are all a few hours away and can’t get there until the next day.',
         image: 'harris-background.jpg',
       },
       {
@@ -196,7 +208,7 @@ module.exports = {
         mobileTemplate: 'mobile-decision-random',
         resetResults: true,
         image: 'decision-background.jpg',
-        to: 8,
+        to: 10,
         // works because it's in an array instead of an object, so it's ordinal
       },
     ]
@@ -244,13 +256,25 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'If they operate, it means removing all of the infected area, which will result in a large wound. It will take months in the hospital to heal.<br><br>Maria’s quality of life will be permanently reduced. They can’t say how much it will be impacted, because they don’t know the extent of the infection.',
+        text: 'If they operate, it means removing all of the infected area, which will result in a large wound. It will take months in the hospital to heal.',
         image: 'maria-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'Because of the pain medication, Maria is incapacitated. Harris has to make the decision and give consent as her Secondary Decision Maker (SDM).<br><br>One of his sons and his wife are with him, but the rest of the family are all a few hours away and likely wouldn’t be able to get there until the next day.',
+        text: 'Maria’s quality of life will be permanently reduced. They can’t say how much it will be impacted, because they don’t know the extent of the infection.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Because of the pain medication, Maria is incapacitated. Harris has to make the decision and give consent as her Secondary Decision Maker (SDM).',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'One of his sons and his wife are with him, but the rest of the family are all a few hours away and can’t get there until the next day.',
         image: 'harris-background.jpg',
       },
       {
@@ -272,7 +296,7 @@ module.exports = {
         mobileTemplate: 'mobile-decision-random',
         resetResults: true,
         image: 'decision-background.jpg',
-        to: 8,
+        to: 10,
         // works because it's in an array instead of an object, so it's ordinal
       },
     ]
@@ -320,13 +344,25 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'If they operate, it means removing all of the infected area, which will result in a large wound. It will take months in the hospital to heal.<br><br>Maria’s quality of life will be permanently reduced. They can’t say how much it will be impacted, because they don’t know the extent of the infection.',
+        text: 'If they operate, it means removing all of the infected area, which will result in a large wound. It will take months in the hospital to heal.',
         image: 'maria-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'Because of the pain medication, Maria is incapacitated. Harris has to make the decision and give consent as her Secondary Decision Maker (SDM).<br><br>One of his sons and his wife are with him, but the rest of the family are all a few hours away and likely wouldn’t be able to get there until the next day.',
+        text: 'Maria’s quality of life will be permanently reduced. They can’t say how much it will be impacted, because they don’t know the extent of the infection.',
+        image: 'maria-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Because of the pain medication, Maria is incapacitated. Harris has to make the decision and give consent as her Secondary Decision Maker (SDM).',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'One of his sons and his wife are with him, but the rest of the family are all a few hours away and can’t get there until the next day.',
         image: 'harris-background.jpg',
       },
       {
@@ -348,7 +384,7 @@ module.exports = {
         mobileTemplate: 'mobile-decision-random',
         resetResults: true,
         image: 'decision-background.jpg',
-        to: 8,
+        to: 10,
         // works because it's in an array instead of an object, so it's ordinal
       },
     ]
@@ -390,7 +426,13 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'Having grieved as he watched his wife slowly slip away for the last few years, Harris feels ready to let her pass away.<br><br>Now that everyone is together, the family is able to discuss what they think should be done, and what Maria would have wanted.',
+        text: 'Having grieved as he watched his wife slowly slip away for the last few years, Harris feels ready to let her pass away.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Now that everyone is together, the family is able to discuss what they think should be done, and what Maria would have wanted.',
         image: 'harris-background.jpg',
       },
       {
@@ -402,19 +444,25 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'But because they never created an Advance Care Plan (ACP), it’s difficult to convince the doctor that they’re acting in the best interests of Maria and doing what she would have wanted.<br><br>The doctor needs some sort of proof to be able to authorize it.',
+        text: 'But because they never created an Advance Care Plan (ACP), it’s difficult to convince the doctor that they’re doing what she would have wanted.<br><br>The doctor needs some sort of proof to be able to authorize it.',
         image: 'harris-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'Harris goes into his legal documents to retrieve hand-written paper where he and Maria wrote down their wishes.<br><br>It helps support their case, but it isn’t a legal document. Harris still has to have a lengthy discussion with the doctor to convince her they’re making the decision Maria would have if she were able.',
+        text: 'Harris goes into his legal documents to retrieve the hand-written paper where he and Maria wrote down some of their wishes.',
         image: 'harris-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'The doctor eventually agrees.<br><br>They discontinue the antibiotics and shift towards comfort, rather than curative care for Maria.',
+        text: 'It helps support their case. After a lengthy discussion with the doctor to convince her they’re making the decision Maria would have if she were able, the doctor agrees.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'They discontinue the antibiotics and shift towards comfort, rather than curative care for Maria.',
         image: 'maria-background.jpg',
       },
       {
@@ -442,7 +490,7 @@ module.exports = {
         mobileTemplate: 'mobile-decision-random',
         resetResults: true,
         image: 'decision-background.jpg',
-        to: 11,
+        to: 13,
         // works because it's in an array instead of an object, so it's ordinal
       },
     ]
@@ -460,7 +508,13 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'Harris decides to not give Maria antibiotics, but the doctor pushes back against Harris.<br><br>Because it’s still too early to tell the extent of the infection, she doesn’t think it’s the right call to make. She recommends that Harris start antibiotics to at least slow down the infection until they can assess the situation further.',
+        text: 'Harris decides to not give Maria antibiotics, but the doctor pushes back against Harris.<br><br>Because it’s still too early to tell the extent of the infection, she doesn’t think it’s the right call to make.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'She recommends that Harris start antibiotics to at least slow down the infection until they can assess the situation further.',
         image: 'harris-background.jpg',
       },
       {
@@ -482,7 +536,7 @@ module.exports = {
         mobileTemplate: 'mobile-decision-random',
         resetResults: true,
         image: 'decision-background.jpg',
-        to: 2,
+        to: 3,
         // works because it's in an array instead of an object, so it's ordinal
       },
     ]
@@ -524,7 +578,13 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'Having grieved as he watched his wife slowly slip away for the last few years, Harris feels ready to let her pass away.<br><br>Now that everyone is together, the family is able to discuss what they think should be done, and what Maria would have wanted.',
+        text: 'Having grieved as he watched his wife slowly slip away for the last few years, Harris feels ready to let her pass away.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Now that everyone is together, the family is able to discuss what they think should be done, and what Maria would have wanted.',
         image: 'harris-background.jpg',
       },
       {
@@ -536,19 +596,25 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'But because they never created an Advance Care Plan (ACP), it’s difficult to convince the doctor that they’re acting in the best interests of Maria and doing what she would have wanted.<br><br>The doctor needs some sort of proof to be able to authorize it.',
+        text: 'But because they never created an Advance Care Plan (ACP), it’s difficult to convince the doctor that they’re doing what she would have wanted.<br><br>The doctor needs some sort of proof to be able to authorize it.',
         image: 'harris-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'Harris goes into his legal documents to retrieve hand-written paper where he and Maria wrote down their wishes.<br><br>It helps support their case, but it isn’t a legal document. Harris still has to have a lengthy discussion with the doctor to convince her they’re making the decision Maria would have if she were able.',
+        text: 'Harris goes into his legal documents to retrieve the hand-written paper where he and Maria wrote down some of their wishes.',
         image: 'harris-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'The doctor eventually agrees.<br><br>They discontinue the antibiotics and shift towards comfort, rather than curative care for Maria.',
+        text: 'It helps support their case. After a lengthy discussion with the doctor to convince her they’re making the decision Maria would have if she were able, the doctor agrees.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'They discontinue the antibiotics and shift towards comfort, rather than curative care for Maria.',
         image: 'maria-background.jpg',
       },
       {
@@ -576,7 +642,7 @@ module.exports = {
         mobileTemplate: 'mobile-decision-random',
         resetResults: true,
         image: 'decision-background.jpg',
-        to: 11,
+        to: 13,
         // works because it's in an array instead of an object, so it's ordinal
       },
     ]
@@ -600,7 +666,7 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'But because he doesn’t have ACP documentation, the doctor can’t authorize the discontinuation of antibiotics until more tests are run.',
+        text: 'But because he doesn’t have any Advance Care Planning (ACP) documentation, the doctor can’t authorize the discontinuation of antibiotics until more tests are run.',
         image: 'harris-background.jpg',
       },
       {
@@ -630,7 +696,13 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'Having grieved as he watched his wife slowly slip away for the last few years, Harris feels ready to let her pass away.<br><br>Now that everyone is together, the family is able to discuss what they think should be done, and what Maria would have wanted.',
+        text: 'Having grieved as he watched his wife slowly slip away for the last few years, Harris feels ready to let her pass away.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'Now that everyone is together, the family is able to discuss what they think should be done, and what Maria would have wanted.',
         image: 'harris-background.jpg',
       },
       {
@@ -642,19 +714,25 @@ module.exports = {
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'But because they never created an Advance Care Plan (ACP), it’s difficult to convince the doctor that they’re acting in the best interests of Maria and doing what she would have wanted.<br><br>The doctor needs some sort of proof to be able to authorize it.',
+        text: 'But because they never created an Advance Care Plan (ACP), it’s difficult to convince the doctor that they’re doing what she would have wanted.<br><br>The doctor needs some sort of proof to be able to authorize it.',
         image: 'harris-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'Harris goes into his legal documents to retrieve hand-written paper where he and Maria wrote down their wishes.<br><br>It helps support their case, but it isn’t a legal document. Harris still has to have a lengthy discussion with the doctor to convince her they’re making the decision Maria would have if she were able.',
+        text: 'Harris goes into his legal documents to retrieve the hand-written paper where he and Maria wrote down some of their wishes.',
         image: 'harris-background.jpg',
       },
       {
         presentTemplate: 'info',
         mobileTemplate: 'look-at-screen',
-        text: 'The doctor eventually agrees.<br><br>They discontinue the antibiotics and shift towards comfort, rather than curative care for Maria.',
+        text: 'It helps support their case. After a lengthy discussion with the doctor to convince her they’re making the decision Maria would have if she were able, the doctor agrees.',
+        image: 'harris-background.jpg',
+      },
+      {
+        presentTemplate: 'info',
+        mobileTemplate: 'look-at-screen',
+        text: 'They discontinue the antibiotics and shift towards comfort, rather than curative care for Maria.',
         image: 'maria-background.jpg',
       },
       {
@@ -682,7 +760,7 @@ module.exports = {
         mobileTemplate: 'mobile-decision-random',
         resetResults: true,
         image: 'decision-background.jpg',
-        to: 13,
+        to: 15,
         // works because it's in an array instead of an object, so it's ordinal
       },
     ]

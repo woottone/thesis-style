@@ -10,22 +10,25 @@
       });
     </script>
   </head>
-  <body style="background-image: url(static/<%= image %>); background-position: left top; background-size: cover;">
+  <body style="background-image: url(static/<%= image %>); background-size: contain; background-repeat: no-repeat;">
+    <button id="exit" data-event="exit" class="exit-button button" style="position: relative; top: 40; left: 90%;"><img src="static/exit-modal.png" style="height: 40px;"></button>
       <div class="results-container">
           <% const resultsByChoice = choices.map(() => []);%>
           <% Object.keys(results).forEach(player => resultsByChoice[results[player]].push(player)); %>
           <%resultsByChoice.forEach((players, choiceNumber) => { %>
             <!-- going to do each once per result -->
             <!-- choiceNumber is index, choices is array of names -->
-            <div class="choice-print">
+            <!-- <div class="choice-print"> -->
               <div class="choice-title body-text"><%=choices[choiceNumber]%></div>
+              <div class="choice-result-container">
               <%players.forEach(player => {%>
-                <div class="choice-result body-text"><p style="margin: 0 auto;"><%= player %></p></div>
+                <div class="choice-result body-text"><p style="margin: 0 auto;"><%= player %><br><br></p></div>
                 <!-- = prints it out -->
                 <!-- put out one div for each player that voted for this choice -->
                 <%});%>
-                <%});%>
-            </div>
+              </div>
+          <%});%>
+            <!-- </div> -->
       </div>
       <!-- <% Object.keys(results).forEach(player => { %>
         <div>
